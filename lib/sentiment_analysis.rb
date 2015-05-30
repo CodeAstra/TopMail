@@ -14,8 +14,7 @@ module SentimentAnalysis
 
     response_hash = JSON.parse(response.to_json)
 
-    aggregate_sentiment = response_hash['aggregate']['sentiment']
     aggregate_score =  response_hash['aggregate']['score']
-    return [aggregate_sentiment, aggregate_score]
+    return aggregate_score
   end
 end
