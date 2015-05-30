@@ -1,0 +1,7 @@
+development:
+    url: https://api.clusterpoint.com
+    account_id: 100259
+    database: Email
+    username: chi6rag+clusterpoint@codeastra.com
+    password: valid_password
+    [debug_output: $stdout]
