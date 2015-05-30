@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <header class="navbar-fixed-top">
+    <% if current_user %>
+      <div id="current_user" class="pull-right">
+        <div class="user_details pull-right">
+          <%#= content_tag :div, current_user.name, class: "name" %>
+          <%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>Signout"), destroy_user_session_path, method: :delete %>
+        </div>
+        <%#= image_tag current_user.image, class: 'pull-right' %>
+      </div>
+    <% end %>
+    <div id="brand">TopMail</div>
+  </header>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
 </body>
 </html>
