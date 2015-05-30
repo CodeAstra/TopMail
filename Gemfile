@@ -43,4 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'devise'
+gem "omniauth-google-oauth2"
