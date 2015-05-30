@@ -1,0 +1,33 @@
+jQuery(function() {
+  return $.ajax({
+    url: 'https://apis.google.com/js/client:plus.js?onload=gpAsyncInit',
+    dataType: 'script',
+    cache: true
+  });
+});
+
+window.gpAsyncInit = function() {
+  $('.googleplus-login').click(function(e) {
+    e.preventDefault();
+    gapi.auth.authorize({
+      immediate: true,
+      response_type: 'code',
+      cookie_policy: 'single_host_origin',
+      client_id: '<%= ENV["GOOGLE_CLIENT_ID"] %>',
+      scope: 'email profile'
+    }, function(response) {
+      if (response && !response.error) {
+        // google authentication succeed, now post data to server and handle data securely
+        jQuery.ajax({type: 'POST', url: "/users/auth/google_oauth2/callback", dataType: 'json', data: response,
+          success: function(json) {
+            // response from server
+            console.log("Server Responded");
+          }
+        });
+      } else {
+        // google authentication failed
+        window.location.href = $('.googleplus-login').attr('href');
+      }
+    });
+  });
+};
