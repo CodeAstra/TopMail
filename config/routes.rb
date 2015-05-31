@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   end
   root 'home#index'
 
-  resources :emails
   get 'home/settings' =>'home#settings'
   resources :emails
 
