@@ -6,6 +6,12 @@ html, body {
 }
 
 header {
+
+  .navbar {
+    margin-bottom: 0px;
+    height: 10vh;
+  }
+
   #current_user {
     padding: 5px;
 

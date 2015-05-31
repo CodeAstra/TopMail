@@ -5,11 +5,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   authenticated :user do
-    root :to => 'home#index', :as => :authenticated_root
+    root :to => 'home#welcome', :as => :authenticated_root
   end
   root 'home#index'
 
   resources :emails
+  get 'home/settings' =>'home#settings'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -31,6 +32,10 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+
+  # welcome
+  # home settings
+  # emails index
 
   # Example resource route with sub-resources:
   #   resources :products do

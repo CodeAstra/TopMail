@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def welcome
   end
+
+  def settings
+  end
 end
