@@ -67,7 +67,7 @@ private
     thread[:messages].push(message)
     thread[:sentiment_score] += message_sentiment_score(message)
     # thread.length_of_messages += message[:body].length
-    thread[:keywords_score] += message_keyword_score(message[:body])
+    thread[:keywords_score] += message_keyword_score(message[:subject])
     @threads.push(thread) if thread_was_nil
     return thread
   end
@@ -160,7 +160,14 @@ private
 
   def message_keyword_score(txt)
     # TODO: Fix this
-    return rand(10)
+    score = rand(10)
+    txt = txt.downcase
+    %W[happy good nice satified awesome god heaven pleasan smooth amaz great].each do |word|
+      score -= 2*(txt.scan(word))
+    end
+    %W[suck irritat frustat screw kill die dead late pathet worst irrita dirt hell].each do |word|
+      score += 2*(txt.scan(word))
+    end
   end
 
   def message_was_from_user(message, user)
