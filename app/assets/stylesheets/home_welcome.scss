@@ -38,6 +38,32 @@
 
 #inbox {
   margin-top: 40px;
+  
+  .icons_container {
+    width: 8em;
+    display: inline-block;
+    
+    i {
+      width: 1.5em;
+      display: inline-block;
+      
+      &.fa-envelope-o {
+        color: #16a085;
+      }
+
+      &.fa-clock-o {
+        color: #2980b9;
+      }
+
+      &.fa-files-o {
+        color: #d35400;
+      }
+
+      &.fa-frown-o {
+        color: #d35400;
+      }
+    }
+  }
 }
 
 .progress_buttons_container {

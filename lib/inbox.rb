@@ -163,11 +163,12 @@ private
     score = rand(10)
     txt = txt.downcase
     %W[happy good nice satified awesome god heaven pleasan smooth amaz great].each do |word|
-      score -= 2*(txt.scan(word))
+      score -= 2*(txt.scan(word).count)
     end
     %W[suck irritat frustat screw kill die dead late pathet worst irrita dirt hell].each do |word|
-      score += 2*(txt.scan(word))
+      score += 2*(txt.scan(word).count)
     end
+    return score
   end
 
   def message_was_from_user(message, user)

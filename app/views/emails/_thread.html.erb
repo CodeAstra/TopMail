@@ -1,3 +1,17 @@
-<tr>
-  <td><%= thread[:messages].first[:subject] %></td>
+<tr class="thread">
+  <td>
+    <span class="icons_container">
+      <i class="fa fa-envelope-o"></i>
+      <% if rand(10) < 4 %>
+        <i class="fa fa-clock-o"></i>
+      <% end %>
+      <% if rand(10) < 4 %>
+        <i class="fa fa-files-o"></i>
+      <% end %>
+      <% if rand(10) < 8 && (@threads.index(thread) < @threads.length/3) %>
+        <i class="fa fa-frown-o"></i>
+      <% end %>
+    </span>
+    <%= thread[:messages].first[:subject] %>
+  </td>
 </tr>
