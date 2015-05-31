@@ -1,0 +1,89 @@
+
+	.product-punchline > h2 {
+		font-size: 12vmin;
+		font-family: $primary_font;
+		font-weight: 100;
+		position: relative; top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.product-quote {
+		width: 60%; height: 40%;
+
+		.login-button {
+			padding: 1.2em;
+			color: $primary_color;
+			background-color: $special_color;
+			text-decoration: none;
+			font-family: primary_font;
+			font-weight: 100;
+			&:hover {text-decoration: none;}
+			position: relative;
+			top: 2em;
+			border-radius: 4px;
+
+			i {
+				position: relative; top: 10px;
+				font-size: 2em;
+			}
+
+		}
+
+	}
+
+	.product-quote > * {
+		font-size: 3.3vmin;
+		font-family: $primary_font;
+		position: relative; bottom: 7%;
+		color: $secondary_color;
+	}
+
+
+	.landing-page {
+
+		.landing {
+			background: url(http://res.cloudinary.com/chi6rag/image/upload/v1433029221/TopMail/Blurred_Backgrounds_6.jpg);
+			width: 100%; height: 100vh;
+			text-align: center;
+			font-family: $primary_font
+
+			.container-fluid {
+				margin: 0px; padding: 0px;
+			}
+
+
+		.product-name {
+			width: 100%; height: 20%;
+			border: 1px solid transparent;
+
+			h1 > span {
+				font-weight: 100;
+				font-family: $primary_font;
+			}
+
+			h1 {
+				font-size: 9vmin;
+				color: $primary_color;
+				position: relative; top: 40%;
+				text-transform: lowercase;
+			}
+
+		}
+
+		.product-punchline {
+			width: 100%; height: 30%;
+			color: $primary_color;
+
+			h2 {
+				font-size: 12vmin;
+				font-family: $primary_font
+				font-weight: 100;
+				position: relative; top: 50%;
+				transform: translateY(-50%);
+			}
+
+		}
+
+	}
+
+}

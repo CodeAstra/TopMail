@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   authenticated :user do
     root :to => 'home#index', :as => :authenticated_root
   end
-  root 'home#land'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
