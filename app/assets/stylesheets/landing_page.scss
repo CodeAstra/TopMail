@@ -12,10 +12,10 @@
 
 		.login-button {
 			padding: 1.2em;
-			color: whitesmoke;
-			background-color: #dd4b39;
+			color: $primary_color;
+			background-color: $special_color;
 			text-decoration: none;
-			font-family: 'Lato', sans-serif;
+			font-family: primary_font;
 			font-weight: 100;
 			&:hover {text-decoration: none;}
 			position: relative;
@@ -35,7 +35,7 @@
 		font-size: 3.3vmin;
 		font-family: 'Open Sans', sans-serif;
 		position: relative; bottom: 7%;
-		color: dimgrey;
+		color: $secondary_color;
 	}
 
 
@@ -43,9 +43,9 @@
 
 		.landing {
 			background: url(http://res.cloudinary.com/chi6rag/image/upload/v1433029221/TopMail/Blurred_Backgrounds_6.jpg);
-			width: 100vw; height: 100vh;
+			width: 100%; height: 100vh;
 			text-align: center;
-			font-family: 'Muli', sans-serif;
+			font-family: $primary_font
 
 			.container-fluid {
 				margin: 0px; padding: 0px;
@@ -76,7 +76,7 @@
 
 			h2 {
 				font-size: 12vmin;
-				font-family: 'Lato', sans-serif;
+				font-family: $primary_font
 				font-weight: 100;
 				position: relative; top: 50%;
 				transform: translateY(-50%);
