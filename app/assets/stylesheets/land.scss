@@ -1,3 +1,54 @@
-.landing {
-	height: 100vh; width: 100vw;
-}
+	.row {
+		margin-left: 0px; margin-right: 0px;
+	}
+
+	.landing {
+		background: url(http://res.cloudinary.com/chi6rag/image/upload/v1433029221/TopMail/Blurred_Backgrounds_6.jpg);
+		width: 100vw; height: 100vh;
+		text-align: center;
+		font-family: 'Muli', sans-serif;
+	}
+
+	.landing > .container-fluid {
+		margin: 0px; padding: 0px;
+	}
+
+	.product-name {
+		width: 100%; height: 20%;
+	}
+
+	.product-name h1 > span {
+		font-weight: 100;
+		font-family: 'Lato', sans-serif;
+	}
+
+	.product-name > h1 {
+		font-size: 9vmin;
+		color: whitesmoke;
+		position: relative; top: 40%;
+		text-transform: lowercase;
+	}
+
+	.product-punchline {
+		width: 100%; height: 40%;
+		color: whitesmoke;
+	}
+
+	.product-punchline > h2 {
+		font-size: 12vmin;
+		font-family: 'Lato', sans-serif;
+		font-weight: 100;
+		position: relative; top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.product-quote {
+		width: 60%; height: 40%;
+	}
+
+	.product-quote > * {
+		font-size: 3.3vmin;
+		font-family: 'Open Sans', sans-serif;
+		position: relative; bottom: 10%;
+		color: dimgrey;
+	}
