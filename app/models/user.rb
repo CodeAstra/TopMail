@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
           email: data["email"],
           password: Devise.friendly_token[0,20],
           image: data.image.split("?")[0],
-          gplus_url: data.urls.first[1]
+          gplus_url: data.urls.try(:first).try(:last)
         )
     end
     user
