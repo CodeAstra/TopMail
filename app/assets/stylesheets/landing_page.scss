@@ -1,7 +1,7 @@
 
 	.product-punchline > h2 {
 		font-size: 12vmin;
-		font-family: 'Lato', sans-serif;
+		font-family: $primary_font;
 		font-weight: 100;
 		position: relative; top: 50%;
 		transform: translateY(-50%);
@@ -33,7 +33,7 @@
 
 	.product-quote > * {
 		font-size: 3.3vmin;
-		font-family: 'Open Sans', sans-serif;
+		font-family: $primary_font;
 		position: relative; bottom: 7%;
 		color: $secondary_color;
 	}
@@ -58,7 +58,7 @@
 
 			h1 > span {
 				font-weight: 100;
-				font-family: 'Lato', sans-serif;
+				font-family: $primary_font;
 			}
 
 			h1 {
