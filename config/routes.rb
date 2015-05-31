@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'home/settings' =>'home#settings'
+  resources :emails
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

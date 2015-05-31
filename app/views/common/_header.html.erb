@@ -8,7 +8,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">TopMail</a>
+        <%= link_to "TopMail", emails_path, class: "navbar-brand" %>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -27,6 +27,9 @@
                     <%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>Signout"), destroy_user_session_path, method: :delete %>
                   </li>
                 </ul>
+              </li>
+              <li>
+                <%= link_to raw("<span class='glyphicon glyphicon-cog'></span>"), home_settings_path %>
               </li>
             <% else %>
               <li>
