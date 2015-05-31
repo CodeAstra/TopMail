@@ -4,12 +4,29 @@
   <title>TopMail</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render partial: 'common/header' %>
-  <div class="container">
-    <%= yield %>
-  </div>
+  <% unless controller_name == 'home' %>
+    <header class="navbar-fixed-top">
+      <% if current_user %>
+        <div id="current_user" class="pull-right">
+          <div class="user_details pull-right">
+            <%= content_tag :div, current_user.name, class: "name" %>
+            <%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>Signout"), destroy_user_session_path, method: :delete %>
+          </div>
+          <%= image_tag current_user.image, class: 'pull-right' %>
+        </div>
+      <% end %>
+      <div id="brand">TopMail</div>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  <% end %>
+  <%= yield %>
 </body>
 </html>
