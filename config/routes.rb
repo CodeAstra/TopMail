@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   authenticated :user do
-    root :to => 'home#index', :as => :authenticated_root
+    root :to => 'home#welcome', :as => :authenticated_root
   end
   root 'home#index'
 
