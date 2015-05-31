@@ -5,8 +5,10 @@
 	<div class="row product-quote" style='margin: 0 auto;'>
 		<p style=" color: lightgrey;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+		<a href="<%= user_omniauth_authorize_path(:google_oauth2) %>" class='login-button'>
+			<i class="fa fa-google-plus"></i>&nbsp;&nbsp;&nbsp;Login with Google
+		</a>
 	</div>
-	<%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
 	</div>
 
 	<div class="two deliverables"></div>
@@ -17,6 +19,3 @@
 
 	<div class="five footer"></div>
 </div>
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
