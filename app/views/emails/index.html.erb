@@ -1,0 +1,10 @@
+<div id="inbox" class="container">
+
+  <table class="table table-striped table-hover">
+    <tbody>
+      <% @threads.each do |thread| %>
+        <%= render partial: 'emails/thread', locals: {thread: thread} %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

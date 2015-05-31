@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top" id="common-navbar">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -8,27 +8,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">TopMail</a>
+        <%= link_to "TopMail", emails_path, class: "navbar-brand" %>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Inbox", emails_path %></li>
+          <li><%= link_to "Settings", "#" %></li>
             <% if current_user %>
               <li class="dropdown">
                 <a id="current_user" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -44,6 +30,9 @@
                   </li>
                 </ul>
               </li>
+              <li>
+                <%= link_to raw("<span class='glyphicon glyphicon-cog'></span>"), home_settings_path %>
+              </li>
             <% else %>
               <li>
                 <%= link_to "Login", user_omniauth_authorize_path(:google_oauth2) %>
@@ -54,6 +43,3 @@
     </div>
   </nav>
 </header>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>

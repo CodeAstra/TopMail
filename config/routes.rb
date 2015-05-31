@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'home/settings' =>'home#settings'
+  resources :emails
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -31,6 +32,10 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+
+  # welcome
+  # home settings
+  # emails index
 
   # Example resource route with sub-resources:
   #   resources :products do

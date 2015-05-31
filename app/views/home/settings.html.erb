@@ -1,64 +1,66 @@
-<div class="row">
-  The following is the configuration that works for most. Feel free to change . You can change the settings anytime in the future by clicking on ### icon on top right.
+<div class="home_settings container">
+
+  <div class="row">
+    The following is the configuration that works for most. Feel free to change . You can change the settings anytime in the future by clicking on the Settings icon on top right.
+  </div>
+
+  <div class="row">
+    <div class="col-md-7">
+      <h3>Sentiment Analysis</h3>
+      <p>Your emails are run through a sentiment analysis algorithm which can detect any anger, dissatisfaction and quantify them for you to prioritize your emails.</p>
+    </div>
+    <div class="col-md-5">
+      <br/><br/><p>Current Slider Value: <span id="sentimentVal">3</span></p><br/>
+    <input id="sentiment" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/&t>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-7">
+      <h3>Length of email</h3>
+      <p>Your emails are run through a sentiment analysis algorithm which can detect any anger, dissatisfaction and quantify them for you to prioritize your emails.</p>
+    </div>
+    <div class="col-md-5">
+      <br/><br/><p>Current Slider Value: <span id="lengthVal">3</span></p><br/>
+    <input id="length" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/&t>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-7">
+      <h3>No Reply Streak</h3>
+      <p>Your emails are run through a sentiment analysis algorithm which can detect any anger, dissatisfaction and quantify them for you to prioritize your emails.</p>
+    </div>
+    <div class="col-md-5">
+      <br/><br/><p>Current Slider Value: <span id="streakVal">3</span></p><br/>
+    <input id="streak" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/&t>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-7">
+      <h3>Last reply time</h3>
+      <p>Your emails are run through a sentiment analysis algorithm which can detect any anger, dissatisfaction and quantify them for you to prioritize your emails.</p>
+    </div>
+    <div class="col-md-5">
+      <br/><br/><p>Current Slider Value: <span id="lastreplyVal">3</span></p><br/>
+    <input id="lastreply" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/&t>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+    <h3>Add keywords</h3>
+    <p>Type your keywords separated by commas. Then click on "ADD keywords". Once that is done you will see a slider for each of your keywords where you can set the weights like you did previously.</p>
+    <input type="text" class="form-control" id="usr">
+    <div class="progress_buttons_container container-fluid">
+      <div class="row">
+        <button class="btn-sm btn-primary pull-left">Add Keywords</button>
+        <button class="btn-sm btn-primary pull-right">Save Settings</button>
+        <button class="skip btn-sm btn-disabled pull-right">Skip</button>
+      </div>
+    </div>
+    </div>
+  </div>
+
 </div>
-
-<div class="row">
-  <div class="col-md-7">
-    <h3>Sentiment Analysis</h3>
-    <p>Your emails are run through a sentiment analysis algorithm which can detect any anger, dissatisfaction and quantify them for you to prioritize your emails.</p>
-  </div>
-  <div class="col-md-5">
-    <br/><br/><p>Current Slider Value: <span id="sentimentVal">3</span></p><br/>
-  <input id="sentiment" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/&t>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-7">
-    <h3>Length of email</h3>
-    <p>Your emails are run through a sentiment analysis algorithm which can detect any anger, dissatisfaction and quantify them for you to prioritize your emails.</p>
-  </div>
-  <div class="col-md-5">
-    <br/><br/><p>Current Slider Value: <span id="lengthVal">3</span></p><br/>
-  <input id="length" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/&t>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-7">
-    <h3>No Reply Streak</h3>
-    <p>Your emails are run through a sentiment analysis algorithm which can detect any anger, dissatisfaction and quantify them for you to prioritize your emails.</p>
-  </div>
-  <div class="col-md-5">
-    <br/><br/><p>Current Slider Value: <span id="streakVal">3</span></p><br/>
-  <input id="streak" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/&t>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-7">
-    <h3>Last reply time</h3>
-    <p>Your emails are run through a sentiment analysis algorithm which can detect any anger, dissatisfaction and quantify them for you to prioritize your emails.</p>
-  </div>
-  <div class="col-md-5">
-    <br/><br/><p>Current Slider Value: <span id="lastreplyVal">3</span></p><br/>
-  <input id="lastreply" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/&t>
-  </div>
-</div>
-
-
-
-<div class="row">
-    <div class="col-md-12">
-  <h3>Add keywords</h3>
-  <p>Type your keywords separated by commas. Then click on "ADD keywords". Once that is done you will see a slider for each of your keywords where you can set the weights like you did previously.</p>
-  <input type="text" class="form-control" id="usr">
-  <button class="btn-lg btn-primary">+Add Keywords</button>
-  </div>
-</div>
-
-<script>
-  $(document).ready(function(){
-
-  });
-</script>
