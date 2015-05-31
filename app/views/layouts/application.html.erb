@@ -4,12 +4,13 @@
   <title>TopMail</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>p
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render partial: 'common/header' %>
-  <div class="container">
-    <%= yield %>
-  </div>
+  <%= render partial: 'common/header' unless controller_name == 'home' && action_name == 'index' %>
+  <%= yield %>
 </body>
 </html>
