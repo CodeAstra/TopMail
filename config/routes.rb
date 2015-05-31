@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   root 'home#index'
 
+  get 'home/settings' =>'home#settings'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
