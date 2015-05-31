@@ -10,7 +10,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render partial: 'common/header' unless controller_name == 'home' && action_name == 'index' %>
+  <%= render partial: 'common/header' unless controller_name == 'home' && action_name == 'index' || action_name == 'welcome' %>
+  <%= render partial: 'common/notices_and_errors' unless controller_name == 'home' && action_name == 'welcome' %>
   <%= yield %>
 </body>
 </html>
