@@ -4,7 +4,7 @@ class EmailsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    contextio = ContextIO.new(current_user.contextio_key, current_user.contextio_secret)
+    contextio = ContextIO.new(CONTEXTIO_KEYS[current_user.email][:key], CONTEXTIO_KEYS[current_user.email][:secret])
     account = contextio.accounts.where(email: current_user.email).first
     # debugger
     @emails = account.messages.where(limit: 50)
