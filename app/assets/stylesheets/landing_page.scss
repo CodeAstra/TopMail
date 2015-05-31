@@ -63,7 +63,7 @@
 
 			h1 {
 				font-size: 9vmin;
-				color: whitesmoke;
+				color: $primary_color;
 				position: relative; top: 40%;
 				text-transform: lowercase;
 			}
@@ -72,7 +72,7 @@
 
 		.product-punchline {
 			width: 100%; height: 30%;
-			color: whitesmoke;
+			color: $primary_color;
 
 			h2 {
 				font-size: 12vmin;
