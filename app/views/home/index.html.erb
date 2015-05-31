@@ -5,7 +5,9 @@
 	<div class="row product-quote" style='margin: 0 auto;'>
 		<p style=" color: lightgrey;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-		<%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2), class: 'login-button' %>
+		<a href="<%= user_omniauth_authorize_path(:google_oauth2) %>" class='login-button'>
+			<i class="fa fa-google-plus"></i>&nbsp;&nbsp;&nbsp;Login with Google
+		</a>
 	</div>
 	</div>
 
