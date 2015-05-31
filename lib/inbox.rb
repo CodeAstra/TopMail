@@ -1,20 +1,28 @@
-UPPER_LIMIT_ON_EMAILS_COUNT = 100
+UPPER_LIMIT_ON_EMAILS_COUNT = 10
 
 require 'contextio'
 
 class Inbox
   def initialize(user)
-    @user = user
-    # @user = OpenStruct.new
-    # @user.email = "chi6rag@codeastra.com"
+    # @user = user
+    @user = OpenStruct.new
+    @user.email = "chi6rag@codeastra.com"
     @threads = []
     @messages = []
     contextio = ContextIO.new(CONTEXTIO_KEYS[@user.email][:key], CONTEXTIO_KEYS[@user.email][:secret])
     @account = contextio.accounts.where(email: @user.email).first
-    @messages_dump = @account.messages.where(include_body: 1).where(limit: UPPER_LIMIT_ON_EMAILS_COUNT)
-    # @messages_dump = @account.messages.where(limit: UPPER_LIMIT_ON_EMAILS_COUNT)
-    # @messages_dump.each {|msg_dp| puts msg_dp.gmail_message_id}
+    # @messages_dump = @account.messages.where(include_body: 1).where(limit: UPPER_LIMIT_ON_EMAILS_COUNT)
+    @messages_dump = @account.messages.where(limit: UPPER_LIMIT_ON_EMAILS_COUNT)
   end
+
+  # def populate_mesages!
+  #   @messages_dump.each do |message_dump|
+  #     thread = MessageThread.find_or_create_by(gmail_thread_id: message_dump.gmail_thread_id)
+  #     thread.messages.find_or_create_by(gmail_message_id: message_dump.gmail_message_id) do |msg|
+  #       msg.subject = message_dump.subject
+  #     end
+  #   end
+  # end
 
   def sort
     @messages_dump.each do |message_dump|
@@ -41,10 +49,10 @@ private
     end
     message[:gmail_message_id] = message_dump.gmail_message_id
     message[:gmail_thread_id] = message_dump.gmail_thread_id
-    message[:attachments_count] = message_dump.files.count
+    # message[:attachments_count] = message_dump.files.count
     message[:time] = message_dump.date
     message[:subject] = message_dump.subject
-    message[:body] = message_dump.body[0]["content"].gsub("\r", " ").gsub("\n", " ")
+    # message[:body] = message_dump.body[0]["content"].gsub("\r", " ").gsub("\n", " ")
 
     @messages.push(message)
 
@@ -57,7 +65,7 @@ private
     thread = empty_thread(message[:gmail_thread_id]) if thread_was_nil
     thread.messages.push(message)
     thread.sentiment_score += message_sentiment_score(message)
-    thread.length_of_messages += message[:body].length
+    # thread.length_of_messages += message[:body].length
     thread.keyword_score += message_keyword_score(message[:body])
     @threads.push(thread) if thread_was_nil
     return thread
@@ -69,7 +77,7 @@ private
       sentiment_score: 0,
       time_since_last_reply: 0,
       streak_of_unreplied_messages: 0,
-      length_of_messages: 0,
+      # length_of_messages: 0,
       keywords_score: 0,
       messages: []
     }
@@ -107,7 +115,7 @@ private
         :sentiment_score,
         :time_since_last_reply,
         :streak_of_unreplied_messages,
-        :length_of_messages,
+        # :length_of_messages,
         :keywords_score
         ].each do |param|
           normalize_thread_scores!(param)
@@ -137,9 +145,11 @@ private
         sentiment_score: -4,
         time_since_last_reply: 1,
         streak_of_unreplied_messages: 4,
-        length_of_messages: 2,
+        # length_of_messages: 2,
         keywords_score: 1,
       }
+
+      weights.keys.each {|wt| thread[wt]*weights[wt]}.reduce(&:+)
     end
 
     def message_sentiment_score(message)
