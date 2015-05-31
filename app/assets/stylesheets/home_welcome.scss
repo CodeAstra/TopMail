@@ -1,0 +1,36 @@
+.user_onboarding {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  // min-height: 100vh; min-width: 100vw;
+
+  .onboarding_welcome {
+    height: 90vh;
+  }
+
+  .onboarding-column {
+    background-color: lightgrey;
+    padding: 2em; padding-top: 3em;
+    padding-bottom: 3em;
+    position: relative; top: 50%;
+    transform: translateY(-50%);
+  	
+    .header { font-size: 5em; }
+    p { font-size: 1.1em; }
+    .content {}
+    .configure-button {
+      width: 77%;
+      background-color: #86B229;
+      display: inline-block;
+      padding: 1em;
+      font-size: 1.3em;
+      margin: 1em;
+      color: white;
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    
+  }
+
+}
