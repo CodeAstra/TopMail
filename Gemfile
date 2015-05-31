@@ -49,3 +49,4 @@ gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'devise'
 gem "omniauth-google-oauth2"
 gem 'bootstrap-sass'
+gem 'contextio'

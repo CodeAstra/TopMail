@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150530190618) do
+ActiveRecord::Schema.define(version: 20150531000732) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20150530190618) do
     t.string   "name"
     t.string   "image"
     t.string   "gplus_url"
+    t.string   "contextio_key"
+    t.string   "contextio_secret"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
